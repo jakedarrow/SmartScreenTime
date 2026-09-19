@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "SmartScreenTime - YouTube Hardcore Shield",
+  "version": "1.0.0",
+  "description": "Hardcore YouTube distraction shield: removes all feeds, shorts, and recommendations, leaving only the search bar.",
+  "permissions": [
+    "storage",
+    "alarms",
+    "tabs"
+  ],
+  "host_permissions": [
+    "*://*.youtube.com/*",
+    "http://127.0.0.1:48200/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "SmartScreenTime (Hardcore YouTube Shield Active)"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.youtube.com/*"
+      ],
+      "js": [
+        "content_youtube.js"
+      ],
+      "css": [
+        "content_youtube.css"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "icons": {
+    "16": "icons/icon-16.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  }
+}

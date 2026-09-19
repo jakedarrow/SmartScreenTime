@@ -1,0 +1,991 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1342FAD830456056002E9AAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1342FAD730456056002E9AAB /* AppDelegate.swift */; };
+		1342FADA30456056002E9AAB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1342FAD930456056002E9AAB /* SceneDelegate.swift */; };
+		1342FADD30456056002E9AAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1342FADB30456056002E9AAB /* LaunchScreen.storyboard */; };
+		1342FAE030456056002E9AAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1342FADE30456056002E9AAB /* Main.storyboard */; };
+		1342FAE930456056002E9AAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1342FAE830456056002E9AAB /* AppDelegate.swift */; };
+		1342FAEC30456056002E9AAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1342FAEA30456056002E9AAB /* Main.storyboard */; };
+		1342FAF330456056002E9AAB /* SmartScreenTime Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 1342FAF230456056002E9AAB /* SmartScreenTime Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1342FAFD30456056002E9AAB /* SmartScreenTime Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 1342FAFC30456056002E9AAB /* SmartScreenTime Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		1342FB0230456056002E9AAB /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = 1342FAC730456055002E9AAB /* Main.html */; };
+		1342FB0330456056002E9AAB /* Main.html in Resources */ = {isa = PBXBuildFile; fileRef = 1342FAC730456055002E9AAB /* Main.html */; };
+		1342FB0430456056002E9AAB /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1342FAC930456055002E9AAB /* Icon.png */; };
+		1342FB0530456056002E9AAB /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 1342FAC930456055002E9AAB /* Icon.png */; };
+		1342FB0630456056002E9AAB /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 1342FACA30456055002E9AAB /* Style.css */; };
+		1342FB0730456056002E9AAB /* Style.css in Resources */ = {isa = PBXBuildFile; fileRef = 1342FACA30456055002E9AAB /* Style.css */; };
+		1342FB0830456056002E9AAB /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = 1342FACB30456055002E9AAB /* Script.js */; };
+		1342FB0930456056002E9AAB /* Script.js in Resources */ = {isa = PBXBuildFile; fileRef = 1342FACB30456055002E9AAB /* Script.js */; };
+		1342FB0A30456056002E9AAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1342FACC30456055002E9AAB /* ViewController.swift */; };
+		1342FB0B30456056002E9AAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1342FACC30456055002E9AAB /* ViewController.swift */; };
+		1342FB0C30456056002E9AAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1342FACD30456056002E9AAB /* Assets.xcassets */; };
+		1342FB0D30456056002E9AAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1342FACD30456056002E9AAB /* Assets.xcassets */; };
+		1342FB0E30456056002E9AAB /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1342FACF30456056002E9AAB /* SafariWebExtensionHandler.swift */; };
+		1342FB0F30456056002E9AAB /* SafariWebExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1342FACF30456056002E9AAB /* SafariWebExtensionHandler.swift */; };
+		1342FB2630456057002E9AAB /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = 1342FB2130456057002E9AAB /* background.js */; };
+		1342FB2730456057002E9AAB /* content_youtube.css in Resources */ = {isa = PBXBuildFile; fileRef = 1342FB2230456057002E9AAB /* content_youtube.css */; };
+		1342FB2830456057002E9AAB /* content_youtube.js in Resources */ = {isa = PBXBuildFile; fileRef = 1342FB2330456057002E9AAB /* content_youtube.js */; };
+		1342FB2930456057002E9AAB /* icons in Resources */ = {isa = PBXBuildFile; fileRef = 1342FB2430456057002E9AAB /* icons */; };
+		1342FB2A30456057002E9AAB /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 1342FB2530456057002E9AAB /* manifest.json */; };
+		1342FB2B30456057002E9AAB /* background.js in Resources */ = {isa = PBXBuildFile; fileRef = 1342FB2130456057002E9AAB /* background.js */; };
+		1342FB2C30456057002E9AAB /* content_youtube.css in Resources */ = {isa = PBXBuildFile; fileRef = 1342FB2230456057002E9AAB /* content_youtube.css */; };
+		1342FB2D30456057002E9AAB /* content_youtube.js in Resources */ = {isa = PBXBuildFile; fileRef = 1342FB2330456057002E9AAB /* content_youtube.js */; };
+		1342FB2E30456057002E9AAB /* icons in Resources */ = {isa = PBXBuildFile; fileRef = 1342FB2430456057002E9AAB /* icons */; };
+		1342FB2F30456057002E9AAB /* manifest.json in Resources */ = {isa = PBXBuildFile; fileRef = 1342FB2530456057002E9AAB /* manifest.json */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1342FAF430456056002E9AAB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1342FAC130456055002E9AAB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1342FAF130456056002E9AAB;
+			remoteInfo = "SmartScreenTime Extension (iOS)";
+		};
+		1342FAFE30456056002E9AAB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1342FAC130456055002E9AAB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1342FAFB30456056002E9AAB;
+			remoteInfo = "SmartScreenTime Extension (macOS)";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1342FB1530456056002E9AAB /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				1342FAF330456056002E9AAB /* SmartScreenTime Extension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1342FB1C30456056002E9AAB /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				1342FAFD30456056002E9AAB /* SmartScreenTime Extension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1342FAC830456055002E9AAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = Base.lproj/Main.html; sourceTree = "<group>"; };
+		1342FAC930456055002E9AAB /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		1342FACA30456055002E9AAB /* Style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = Style.css; sourceTree = "<group>"; };
+		1342FACB30456055002E9AAB /* Script.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = Script.js; sourceTree = "<group>"; };
+		1342FACC30456055002E9AAB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1342FACD30456056002E9AAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1342FACF30456056002E9AAB /* SafariWebExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebExtensionHandler.swift; sourceTree = "<group>"; };
+		1342FAD430456056002E9AAB /* SmartScreenTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartScreenTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1342FAD730456056002E9AAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1342FAD930456056002E9AAB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		1342FADC30456056002E9AAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1342FADF30456056002E9AAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1342FAE130456056002E9AAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1342FAE630456056002E9AAB /* SmartScreenTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartScreenTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1342FAE830456056002E9AAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1342FAEB30456056002E9AAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1342FAED30456056002E9AAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1342FAF230456056002E9AAB /* SmartScreenTime Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "SmartScreenTime Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1342FAF730456056002E9AAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1342FAFC30456056002E9AAB /* SmartScreenTime Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "SmartScreenTime Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1342FB0130456056002E9AAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1342FB2130456057002E9AAB /* background.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = background.js; path = Resources/background.js; sourceTree = "<group>"; };
+		1342FB2230456057002E9AAB /* content_youtube.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; name = content_youtube.css; path = Resources/content_youtube.css; sourceTree = "<group>"; };
+		1342FB2330456057002E9AAB /* content_youtube.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = content_youtube.js; path = Resources/content_youtube.js; sourceTree = "<group>"; };
+		1342FB2430456057002E9AAB /* icons */ = {isa = PBXFileReference; lastKnownFileType = folder; name = icons; path = Resources/icons; sourceTree = "<group>"; };
+		1342FB2530456057002E9AAB /* manifest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = manifest.json; path = Resources/manifest.json; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1342FAD130456056002E9AAB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1342FAE330456056002E9AAB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1342FAEF30456056002E9AAB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1342FAF930456056002E9AAB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1342FAC030456055002E9AAB = {
+			isa = PBXGroup;
+			children = (
+				1342FAC530456055002E9AAB /* Shared (App) */,
+				1342FACE30456056002E9AAB /* Shared (Extension) */,
+				1342FAD630456056002E9AAB /* iOS (App) */,
+				1342FAE730456056002E9AAB /* macOS (App) */,
+				1342FAF630456056002E9AAB /* iOS (Extension) */,
+				1342FB0030456056002E9AAB /* macOS (Extension) */,
+				1342FAD530456056002E9AAB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1342FAC530456055002E9AAB /* Shared (App) */ = {
+			isa = PBXGroup;
+			children = (
+				1342FACC30456055002E9AAB /* ViewController.swift */,
+				1342FACD30456056002E9AAB /* Assets.xcassets */,
+				1342FAC630456055002E9AAB /* Resources */,
+			);
+			path = "Shared (App)";
+			sourceTree = "<group>";
+		};
+		1342FAC630456055002E9AAB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1342FAC730456055002E9AAB /* Main.html */,
+				1342FAC930456055002E9AAB /* Icon.png */,
+				1342FACA30456055002E9AAB /* Style.css */,
+				1342FACB30456055002E9AAB /* Script.js */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1342FACE30456056002E9AAB /* Shared (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				1342FB2030456057002E9AAB /* Resources */,
+				1342FACF30456056002E9AAB /* SafariWebExtensionHandler.swift */,
+			);
+			path = "Shared (Extension)";
+			sourceTree = "<group>";
+		};
+		1342FAD530456056002E9AAB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1342FAD430456056002E9AAB /* SmartScreenTime.app */,
+				1342FAE630456056002E9AAB /* SmartScreenTime.app */,
+				1342FAF230456056002E9AAB /* SmartScreenTime Extension.appex */,
+				1342FAFC30456056002E9AAB /* SmartScreenTime Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1342FAD630456056002E9AAB /* iOS (App) */ = {
+			isa = PBXGroup;
+			children = (
+				1342FAD730456056002E9AAB /* AppDelegate.swift */,
+				1342FAD930456056002E9AAB /* SceneDelegate.swift */,
+				1342FADB30456056002E9AAB /* LaunchScreen.storyboard */,
+				1342FADE30456056002E9AAB /* Main.storyboard */,
+				1342FAE130456056002E9AAB /* Info.plist */,
+			);
+			path = "iOS (App)";
+			sourceTree = "<group>";
+		};
+		1342FAE730456056002E9AAB /* macOS (App) */ = {
+			isa = PBXGroup;
+			children = (
+				1342FAE830456056002E9AAB /* AppDelegate.swift */,
+				1342FAEA30456056002E9AAB /* Main.storyboard */,
+				1342FAED30456056002E9AAB /* Info.plist */,
+			);
+			path = "macOS (App)";
+			sourceTree = "<group>";
+		};
+		1342FAF630456056002E9AAB /* iOS (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				1342FAF730456056002E9AAB /* Info.plist */,
+			);
+			path = "iOS (Extension)";
+			sourceTree = "<group>";
+		};
+		1342FB0030456056002E9AAB /* macOS (Extension) */ = {
+			isa = PBXGroup;
+			children = (
+				1342FB0130456056002E9AAB /* Info.plist */,
+			);
+			path = "macOS (Extension)";
+			sourceTree = "<group>";
+		};
+		1342FB2030456057002E9AAB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1342FB2130456057002E9AAB /* background.js */,
+				1342FB2230456057002E9AAB /* content_youtube.css */,
+				1342FB2330456057002E9AAB /* content_youtube.js */,
+				1342FB2430456057002E9AAB /* icons */,
+				1342FB2530456057002E9AAB /* manifest.json */,
+			);
+			name = Resources;
+			path = "Shared (Extension)";
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1342FAD330456056002E9AAB /* SmartScreenTime (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1342FB1630456056002E9AAB /* Build configuration list for PBXNativeTarget "SmartScreenTime (iOS)" */;
+			buildPhases = (
+				1342FAD030456056002E9AAB /* Sources */,
+				1342FAD130456056002E9AAB /* Frameworks */,
+				1342FAD230456056002E9AAB /* Resources */,
+				1342FB1530456056002E9AAB /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1342FAF530456056002E9AAB /* PBXTargetDependency */,
+			);
+			name = "SmartScreenTime (iOS)";
+			packageProductDependencies = (
+			);
+			productName = "SmartScreenTime (iOS)";
+			productReference = 1342FAD430456056002E9AAB /* SmartScreenTime.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1342FAE530456056002E9AAB /* SmartScreenTime (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1342FB1D30456056002E9AAB /* Build configuration list for PBXNativeTarget "SmartScreenTime (macOS)" */;
+			buildPhases = (
+				1342FAE230456056002E9AAB /* Sources */,
+				1342FAE330456056002E9AAB /* Frameworks */,
+				1342FAE430456056002E9AAB /* Resources */,
+				1342FB1C30456056002E9AAB /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1342FAFF30456056002E9AAB /* PBXTargetDependency */,
+			);
+			name = "SmartScreenTime (macOS)";
+			packageProductDependencies = (
+			);
+			productName = "SmartScreenTime (macOS)";
+			productReference = 1342FAE630456056002E9AAB /* SmartScreenTime.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1342FAF130456056002E9AAB /* SmartScreenTime Extension (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1342FB1230456056002E9AAB /* Build configuration list for PBXNativeTarget "SmartScreenTime Extension (iOS)" */;
+			buildPhases = (
+				1342FAEE30456056002E9AAB /* Sources */,
+				1342FAEF30456056002E9AAB /* Frameworks */,
+				1342FAF030456056002E9AAB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SmartScreenTime Extension (iOS)";
+			packageProductDependencies = (
+			);
+			productName = "SmartScreenTime Extension (iOS)";
+			productReference = 1342FAF230456056002E9AAB /* SmartScreenTime Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		1342FAFB30456056002E9AAB /* SmartScreenTime Extension (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1342FB1930456056002E9AAB /* Build configuration list for PBXNativeTarget "SmartScreenTime Extension (macOS)" */;
+			buildPhases = (
+				1342FAF830456056002E9AAB /* Sources */,
+				1342FAF930456056002E9AAB /* Frameworks */,
+				1342FAFA30456056002E9AAB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SmartScreenTime Extension (macOS)";
+			packageProductDependencies = (
+			);
+			productName = "SmartScreenTime Extension (macOS)";
+			productReference = 1342FAFC30456056002E9AAB /* SmartScreenTime Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1342FAC130456055002E9AAB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2660;
+				LastUpgradeCheck = 2660;
+				TargetAttributes = {
+					1342FAD330456056002E9AAB = {
+						CreatedOnToolsVersion = 26.6;
+					};
+					1342FAE530456056002E9AAB = {
+						CreatedOnToolsVersion = 26.6;
+					};
+					1342FAF130456056002E9AAB = {
+						CreatedOnToolsVersion = 26.6;
+					};
+					1342FAFB30456056002E9AAB = {
+						CreatedOnToolsVersion = 26.6;
+					};
+				};
+			};
+			buildConfigurationList = 1342FAC430456055002E9AAB /* Build configuration list for PBXProject "SmartScreenTime" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1342FAC030456055002E9AAB;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 1342FAD530456056002E9AAB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1342FAD330456056002E9AAB /* SmartScreenTime (iOS) */,
+				1342FAE530456056002E9AAB /* SmartScreenTime (macOS) */,
+				1342FAF130456056002E9AAB /* SmartScreenTime Extension (iOS) */,
+				1342FAFB30456056002E9AAB /* SmartScreenTime Extension (macOS) */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1342FAD230456056002E9AAB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1342FB0430456056002E9AAB /* Icon.png in Resources */,
+				1342FADD30456056002E9AAB /* LaunchScreen.storyboard in Resources */,
+				1342FB0230456056002E9AAB /* Main.html in Resources */,
+				1342FB0830456056002E9AAB /* Script.js in Resources */,
+				1342FB0C30456056002E9AAB /* Assets.xcassets in Resources */,
+				1342FAE030456056002E9AAB /* Main.storyboard in Resources */,
+				1342FB0630456056002E9AAB /* Style.css in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1342FAE430456056002E9AAB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1342FB0530456056002E9AAB /* Icon.png in Resources */,
+				1342FB0730456056002E9AAB /* Style.css in Resources */,
+				1342FAEC30456056002E9AAB /* Main.storyboard in Resources */,
+				1342FB0930456056002E9AAB /* Script.js in Resources */,
+				1342FB0D30456056002E9AAB /* Assets.xcassets in Resources */,
+				1342FB0330456056002E9AAB /* Main.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1342FAF030456056002E9AAB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1342FB2B30456057002E9AAB /* background.js in Resources */,
+				1342FB2E30456057002E9AAB /* icons in Resources */,
+				1342FB2F30456057002E9AAB /* manifest.json in Resources */,
+				1342FB2D30456057002E9AAB /* content_youtube.js in Resources */,
+				1342FB2C30456057002E9AAB /* content_youtube.css in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1342FAFA30456056002E9AAB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1342FB2630456057002E9AAB /* background.js in Resources */,
+				1342FB2930456057002E9AAB /* icons in Resources */,
+				1342FB2A30456057002E9AAB /* manifest.json in Resources */,
+				1342FB2830456057002E9AAB /* content_youtube.js in Resources */,
+				1342FB2730456057002E9AAB /* content_youtube.css in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1342FAD030456056002E9AAB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1342FB0A30456056002E9AAB /* ViewController.swift in Sources */,
+				1342FAD830456056002E9AAB /* AppDelegate.swift in Sources */,
+				1342FADA30456056002E9AAB /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1342FAE230456056002E9AAB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1342FB0B30456056002E9AAB /* ViewController.swift in Sources */,
+				1342FAE930456056002E9AAB /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1342FAEE30456056002E9AAB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1342FB0E30456056002E9AAB /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1342FAF830456056002E9AAB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1342FB0F30456056002E9AAB /* SafariWebExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1342FAF530456056002E9AAB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1342FAF130456056002E9AAB /* SmartScreenTime Extension (iOS) */;
+			targetProxy = 1342FAF430456056002E9AAB /* PBXContainerItemProxy */;
+		};
+		1342FAFF30456056002E9AAB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1342FAFB30456056002E9AAB /* SmartScreenTime Extension (macOS) */;
+			targetProxy = 1342FAFE30456056002E9AAB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1342FAC730456055002E9AAB /* Main.html */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1342FAC830456055002E9AAB /* Base */,
+			);
+			name = Main.html;
+			sourceTree = "<group>";
+		};
+		1342FADB30456056002E9AAB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1342FADC30456056002E9AAB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		1342FADE30456056002E9AAB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1342FADF30456056002E9AAB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1342FAEA30456056002E9AAB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1342FAEB30456056002E9AAB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1342FB1030456056002E9AAB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1342FB1130456056002E9AAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		1342FB1330456056002E9AAB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2V8PP9F47B;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "SmartScreenTime Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jakedarrow.SmartScreenTime.Extension;
+				PRODUCT_NAME = "SmartScreenTime Extension";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1342FB1430456056002E9AAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2V8PP9F47B;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "SmartScreenTime Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jakedarrow.SmartScreenTime.Extension;
+				PRODUCT_NAME = "SmartScreenTime Extension";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1342FB1730456056002E9AAB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2V8PP9F47B;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = SmartScreenTime;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jakedarrow.SmartScreenTime;
+				PRODUCT_NAME = SmartScreenTime;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1342FB1830456056002E9AAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2V8PP9F47B;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = SmartScreenTime;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jakedarrow.SmartScreenTime;
+				PRODUCT_NAME = SmartScreenTime;
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1342FB1A30456056002E9AAB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "SmartScreenTime Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jakedarrow.SmartScreenTime.Extension;
+				PRODUCT_NAME = "SmartScreenTime Extension";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		1342FB1B30456056002E9AAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (Extension)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "SmartScreenTime Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jakedarrow.SmartScreenTime.Extension;
+				PRODUCT_NAME = "SmartScreenTime Extension";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		1342FB1E30456056002E9AAB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = SmartScreenTime;
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jakedarrow.SmartScreenTime;
+				PRODUCT_NAME = SmartScreenTime;
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		1342FB1F30456056002E9AAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "macOS (App)/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = SmartScreenTime;
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = (
+					"-framework",
+					SafariServices,
+					"-framework",
+					WebKit,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.jakedarrow.SmartScreenTime;
+				PRODUCT_NAME = SmartScreenTime;
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = macosx;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1342FAC430456055002E9AAB /* Build configuration list for PBXProject "SmartScreenTime" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1342FB1030456056002E9AAB /* Debug */,
+				1342FB1130456056002E9AAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1342FB1230456056002E9AAB /* Build configuration list for PBXNativeTarget "SmartScreenTime Extension (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1342FB1330456056002E9AAB /* Debug */,
+				1342FB1430456056002E9AAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1342FB1630456056002E9AAB /* Build configuration list for PBXNativeTarget "SmartScreenTime (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1342FB1730456056002E9AAB /* Debug */,
+				1342FB1830456056002E9AAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1342FB1930456056002E9AAB /* Build configuration list for PBXNativeTarget "SmartScreenTime Extension (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1342FB1A30456056002E9AAB /* Debug */,
+				1342FB1B30456056002E9AAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1342FB1D30456056002E9AAB /* Build configuration list for PBXNativeTarget "SmartScreenTime (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1342FB1E30456056002E9AAB /* Debug */,
+				1342FB1F30456056002E9AAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1342FAC130456055002E9AAB /* Project object */;
+}

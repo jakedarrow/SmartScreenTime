@@ -1,0 +1,157 @@
+/* ==========================================================================
+   SmartScreenTime: Hardcore Distraction-Free YouTube (Desktop & Mobile)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. End-Screen Suggested Video Wall & Overlays (Desktop & Mobile)
+   -------------------------------------------------------------------------- */
+.ytp-videowall-still,
+.ytp-videowall-still-image,
+.ytp-videowall-still-info,
+.ytp-videowall-still-list,
+.ytp-videowall-still-round-large,
+.ytp-show-tiles,
+.ytp-endscreen-content,
+.html5-endscreen,
+.ytp-ce-element,
+.ytp-ce-video,
+.ytp-ce-playlist,
+.ytp-ce-channel,
+.ytp-ce-element-show,
+.ytp-ce-covering-overlay,
+.ytp-ce-covering-image,
+.ytp-ce-shadow,
+.ytp-upnext,
+.ytp-autonav-endscreen-countdown-container,
+.ytp-autonav-endscreen-button-container,
+.ytp-endscreen-paginate,
+.ytp-suggestion-set,
+.ytm-endscreen-renderer,
+.endscreen-video-item,
+[class*="videowall"],
+[class*="ytp-endscreen"] {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* --------------------------------------------------------------------------
+   2. Desktop YouTube Clutter, Feed & Comments Removal
+   -------------------------------------------------------------------------- */
+#guide,
+ytd-mini-guide-renderer,
+#guide-button,
+#chips-wrapper,
+#header #chips,
+ytd-feed-filter-chip-bar-renderer,
+#voice-search-button,
+#buttons ytd-notification-topbar-button-renderer,
+#buttons ytd-button-renderer:has(a[href*="upload"]),
+#masthead-ad,
+ytd-ad-slot-renderer,
+.badge-style-type-ad,
+ytd-browse[page-subtype="home"] #contents,
+ytd-browse[page-subtype="home"] ytd-rich-grid-renderer,
+ytd-browse[page-subtype="home"] #primary,
+ytd-watch-flexy #secondary,
+ytd-watch-flexy #related,
+#comments,
+ytd-comments,
+ytd-item-section-renderer:has(#comments),
+ytd-watch-flexy ytd-watch-next-secondary-results-renderer {
+  display: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   3. MOBILE YOUTUBE (m.youtube.com & ytm-app) HOME FEED & COMMENTS PURGE
+   -------------------------------------------------------------------------- */
+/* Hide mobile topic/chips filter bar */
+ytm-feed-filter-chip-bar-renderer,
+ytm-chip-cloud-renderer,
+ytm-chip-cloud-chip-renderer,
+.feed-filter-chip-bar-renderer,
+
+/* Hide mobile bottom navigation bar */
+ytm-pivot-bar-renderer,
+
+/* Hide mobile homepage feed */
+ytm-browse[page-subtype="home"],
+ytm-browse ytm-rich-grid-renderer,
+ytm-browse ytm-section-list-renderer,
+ytm-browse ytm-single-column-browse-results-renderer,
+ytm-browse ytm-media-item,
+ytm-browse ytm-video-with-context-renderer,
+ytm-browse ytm-item-section-renderer,
+[tab-identifier="FEwhat_to_watch"],
+ytm-app[is-home] ytm-single-column-browse-results-renderer,
+ytm-app[is-home] ytm-section-list-renderer,
+ytm-app[is-home] ytm-media-item,
+body.sst-mobile-home ytm-single-column-browse-results-renderer,
+body.sst-mobile-home ytm-section-list-renderer,
+body.sst-mobile-home ytm-media-item,
+body.sst-mobile-home ytm-video-with-context-renderer,
+body.sst-mobile-home lazy-list,
+
+/* Hide mobile related videos under video player */
+ytm-watch ytm-item-section-renderer[section-identifier="related-items"],
+ytm-watch ytm-related-chip-cloud-renderer,
+
+/* HIDE ALL MOBILE COMMENTS, COMMENT ENTRY PREVIEW BOXES & ENGAGEMENT PANELS */
+ytm-comments-entry-point-header-renderer,
+ytm-comments-header-renderer,
+ytm-comment-section-renderer,
+ytm-comment-thread-renderer,
+ytm-compact-comment-renderer,
+.ytm-comments-section,
+.ytm-comments-entry-point,
+[class*="comments-entry-point"],
+[class*="comment-entry-point"],
+[class*="comment-section"],
+[section-identifier="comment-item-section"],
+[section-identifier*="comments"],
+[target-id*="comments"],
+ytm-item-section-renderer:has(ytm-comments-entry-point-header-renderer),
+ytm-item-section-renderer:has(ytm-comments-header-renderer),
+ytm-item-section-renderer:has([class*="comments-entry-point"]),
+ytm-item-section-renderer:has([class*="comment"]),
+ytm-engagement-panel-section-list-renderer[target-id="engagement-panel-comments-section"],
+ytm-engagement-panel-section-list-renderer:has([class*="comment"]),
+ytm-engagement-panel-section-list-renderer:has(ytm-comments-entry-point-header-renderer) {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  max-height: 0 !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* --------------------------------------------------------------------------
+   4. HARD BLOCK ALL SHORTS EVERYWHERE (Desktop & Mobile)
+   -------------------------------------------------------------------------- */
+ytd-reel-shelf-renderer,
+ytd-reel-item-renderer,
+ytd-rich-shelf-renderer[is-shorts],
+ytd-rich-section-renderer:has(ytd-reel-shelf-renderer),
+ytd-shelf-renderer:has(ytd-reel-shelf-renderer),
+ytd-item-section-renderer:has(ytd-reel-shelf-renderer),
+ytd-video-renderer:has(a[href*="/shorts/"]),
+ytd-grid-video-renderer:has(a[href*="/shorts/"]),
+ytd-compact-video-renderer:has(a[href*="/shorts/"]),
+a[title="Shorts"],
+ytd-guide-entry-renderer:has(a[title="Shorts"]),
+ytd-mini-guide-entry-renderer[aria-label="Shorts"],
+yt-chip-cloud-chip-renderer:has(yt-formatted-string[title="Shorts"]),
+grid-shelf-view-model,
+ytm-reel-shelf-renderer,
+ytm-reel-item-renderer,
+ytm-rich-section-renderer:has(ytm-reel-shelf-renderer),
+ytm-video-with-context-renderer:has(a[href*="/shorts/"]),
+ytm-media-item:has(a[href*="/shorts/"]),
+ytm-pivot-bar-item-renderer:has([aria-label="Shorts"]) {
+  display: none !important;
+}
