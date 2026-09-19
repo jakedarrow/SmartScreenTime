@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         SmartScreenTime - Hardcore YouTube Shield
 // @namespace    https://github.com/jakedarrow/SmartScreenTime
-// @version      1.1.0
-// @description  Hardcore distraction-free YouTube: eliminates feeds, shorts, comments, and recommendations on Desktop & Mobile Safari.
+// @version      1.2.0
+// @description  Hardcore distraction-free YouTube: eliminates feeds, shorts, comments, recommendations, and end-screen/up-next overlays on Desktop & Mobile Safari.
 // @author       Jake Darrow
 // @match        *://*.youtube.com/*
 // @run-at       document-start
@@ -16,7 +16,18 @@
 
   // 1. Inject Hardcore Distraction-Free CSS (Desktop & Mobile)
   const css = `
-    /* End-Screen Suggested Video Wall & Overlays (Desktop & Mobile) */
+    /* Hard Block All End-Screen Suggested Videos, Up Next Cards & Overlays */
+    .ytp-upnext,
+    .ytp-upnext-container,
+    .ytp-player-content.ytp-upnext,
+    .ytp-autonav-endscreen-countdown-container,
+    .ytp-autonav-endscreen-countdown-overlay,
+    .ytp-autonav-endscreen-upnext-container,
+    .ytp-autonav-endscreen-upnext-header,
+    .ytp-autonav-endscreen-upnext-button,
+    .ytp-autonav-endscreen-button-container,
+    .ytp-autonav-endscreen-link-container,
+    .ytp-cairo-refresh-autonav-overlay,
     .ytp-videowall-still,
     .ytp-videowall-still-image,
     .ytp-videowall-still-info,
@@ -24,6 +35,8 @@
     .ytp-videowall-still-round-large,
     .ytp-show-tiles,
     .ytp-endscreen-content,
+    .ytp-endscreen-paginate,
+    .ytp-suggestion-set,
     .html5-endscreen,
     .ytp-ce-element,
     .ytp-ce-video,
@@ -33,21 +46,27 @@
     .ytp-ce-covering-overlay,
     .ytp-ce-covering-image,
     .ytp-ce-shadow,
-    .ytp-upnext,
-    .ytp-autonav-endscreen-countdown-container,
-    .ytp-autonav-endscreen-button-container,
-    .ytp-endscreen-paginate,
-    .ytp-suggestion-set,
     .ytm-endscreen-renderer,
+    .ytm-endscreen-item-renderer,
+    .ytm-endscreen-element,
+    .ytm-autonav-bar,
+    .ytm-autonav-endscreen,
+    .ytm-autonav-endscreen-button-renderer,
     .endscreen-video-item,
-    [class*="videowall"],
-    [class*="ytp-endscreen"] {
+    [class*="videowall" i],
+    [class*="ytp-endscreen" i],
+    [class*="ytp-upnext" i],
+    [class*="autonav-endscreen" i],
+    [class*="ytm-endscreen" i],
+    [class*="ytp-autonav" i] {
       display: none !important;
       opacity: 0 !important;
       visibility: hidden !important;
       pointer-events: none !important;
       width: 0 !important;
       height: 0 !important;
+      max-height: 0 !important;
+      max-width: 0 !important;
     }
 
     /* Desktop Clutter, Feeds, Ads & Comments */
@@ -212,12 +231,13 @@
 
   function purgeWatch() {
     const player = document.querySelector('.html5-video-player');
-    if (player && player.classList.contains('ytp-show-tiles')) {
-      player.classList.remove('ytp-show-tiles');
+    if (player) {
+      player.classList.remove('ytp-show-tiles', 'ytp-upnext-active');
     }
 
+    // Eliminate all end-screen and up-next elements immediately
     document.querySelectorAll(
-      '.ytp-videowall-still, .ytp-endscreen-content, .ytp-ce-element, .html5-endscreen, .ytm-endscreen-renderer, [class*="videowall"], ytm-comments-entry-point-header-renderer, .ytm-comments-section, #comments, ytd-comments, ytm-engagement-panel-section-list-renderer'
+      '.ytp-upnext, .ytp-upnext-container, .ytp-player-content.ytp-upnext, .ytp-autonav-endscreen-countdown-container, .ytp-autonav-endscreen-countdown-overlay, .ytp-autonav-endscreen-upnext-container, .ytp-autonav-endscreen-upnext-header, .ytp-autonav-endscreen-upnext-button, .ytp-autonav-endscreen-button-container, .ytp-autonav-endscreen-link-container, .ytp-cairo-refresh-autonav-overlay, .ytp-videowall-still, .ytp-endscreen-content, .ytp-endscreen-paginate, .ytp-suggestion-set, .html5-endscreen, .ytp-ce-element, .ytm-endscreen-renderer, .ytm-endscreen-item-renderer, .ytm-endscreen-element, .ytm-autonav-bar, .ytm-autonav-endscreen, .ytm-autonav-endscreen-button-renderer, .endscreen-video-item, [class*="videowall" i], [class*="ytp-endscreen" i], [class*="ytp-upnext" i], [class*="autonav-endscreen" i], [class*="ytm-endscreen" i], [class*="ytp-autonav" i], ytm-comments-entry-point-header-renderer, .ytm-comments-section, #comments, ytd-comments, ytm-engagement-panel-section-list-renderer'
     ).forEach(el => el.remove());
 
     document.querySelectorAll('ytm-item-section-renderer, div').forEach(el => {
@@ -246,11 +266,11 @@
     }, 200);
   }
 
-  // End-of-video overlay interceptors
+  // End-of-video overlay interceptors: runs continuously during playback to preemptively wipe end cards
   document.addEventListener('timeupdate', (e) => {
     if (e.target && e.target.tagName === 'VIDEO') {
       const video = e.target;
-      if (video.duration && (video.duration - video.currentTime < 15 || video.ended)) {
+      if (video.duration && (video.duration - video.currentTime < 20 || video.ended)) {
         purgeWatch();
       }
     }
