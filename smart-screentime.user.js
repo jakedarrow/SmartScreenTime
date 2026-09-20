@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         SmartScreenTime - Hardcore YouTube Shield
+// @name         Search-Only YouTube
 // @namespace    https://github.com/jakedarrow/SmartScreenTime
 // @version      1.3.0
-// @description  Hardcore distraction-free YouTube: eliminates feeds, shorts, comments, recommendations, and mobile/desktop "Up Next" countdown overlays.
+// @description  Turns YouTube into a distraction-free search tool: eliminates feeds, shorts, comments, recommendations, and autoplay countdowns.
 // @author       Jake Darrow
 // @match        *://*.youtube.com/*
 // @run-at       document-start
