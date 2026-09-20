@@ -1,14 +1,14 @@
 // ==UserScript==
 // @name         Search-Only YouTube
-// @namespace    https://github.com/jakedarrow/SmartScreenTime
+// @namespace    https://github.com/jakedarrow/search-only-youtube
 // @version      1.3.0
 // @description  Turns YouTube into a distraction-free search tool: eliminates feeds, shorts, comments, recommendations, and autoplay countdowns.
 // @author       Jake Darrow
 // @match        *://*.youtube.com/*
 // @run-at       document-start
 // @grant        none
-// @downloadURL  https://raw.githubusercontent.com/jakedarrow/SmartScreenTime/main/smart-screentime.user.js
-// @updateURL    https://raw.githubusercontent.com/jakedarrow/SmartScreenTime/main/smart-screentime.user.js
+// @downloadURL  https://raw.githubusercontent.com/jakedarrow/search-only-youtube/main/search-only-youtube.user.js
+// @updateURL    https://raw.githubusercontent.com/jakedarrow/search-only-youtube/main/search-only-youtube.user.js
 // ==/UserScript==
 
 (function () {

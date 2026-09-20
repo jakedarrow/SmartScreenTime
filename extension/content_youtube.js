@@ -1,4 +1,4 @@
-// SmartScreenTime: Hardcore Distraction-Free YouTube Engine (Desktop & Mobile)
+// Search-Only YouTube: Distraction-Free YouTube Engine (Desktop & Mobile)
 (function () {
   'use strict';
 

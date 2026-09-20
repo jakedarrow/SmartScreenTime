@@ -1,4 +1,4 @@
-// SmartScreenTime: Hardcore Background Service Worker (Manifest V3)
+// Search-Only YouTube: Background Service Worker (Manifest V3)
 
 const MAC_DAEMON_URL = 'http://127.0.0.1:48200';
 
