@@ -1,8 +1,8 @@
 # Search-Only YouTube
 
-A lightweight browser script that turns YouTube into a distraction-free search tool. It strips algorithmic feeds, removes sidebar recommendations, blocks Shorts, and kills autoplay countdowns on both mobile and desktop.
+A lightweight browser script that turns YouTube into a distraction-free search tool. It strips algorithmic feeds, removes sidebar recommendations, blocks Shorts, and kills autoplay countdowns on mobile and desktop.
 
-Works in Mobile Safari (iPhone/iPad) and desktop browsers.
+Works in Mobile Safari (iOS), Firefox for Android, and desktop browsers.
 
 <p align="center">
   <img src="docs/comparison.jpg" alt="Before and After: Search-Only YouTube" width="800" style="border-radius: 12px; max-width: 100%;">
@@ -28,10 +28,17 @@ Works in Mobile Safari (iPhone/iPad) and desktop browsers.
 3. Open this link in Safari and tap **Install**:  
    👉 **[Install Search-Only YouTube](https://raw.githubusercontent.com/jakedarrow/SmartScreenTime/main/smart-screentime.user.js)**
 
-#### Desktop (Chrome / Brave / Arc / Edge)
-1. Open `chrome://extensions` and enable **Developer mode**.
-2. Click **Load unpacked** and select the `SmartScreenTime-Extension` folder.  
-*(Alternatively, install the `smart-screentime.user.js` link via Violentmonkey or Tampermonkey).*
+#### Android (Firefox)
+1. Install **[Firefox for Android](https://play.google.com/store/apps/details?id=org.mozilla.firefox)** from Google Play (free and open-source).
+2. In Firefox, tap the three dots **⋮** > **Add-ons**, and tap **+** next to **Violentmonkey** (or **Tampermonkey**).
+3. Open this link in Firefox and tap **Install**:  
+   👉 **[Install Search-Only YouTube](https://raw.githubusercontent.com/jakedarrow/SmartScreenTime/main/smart-screentime.user.js)**
+
+#### Desktop (Chrome / Brave / Arc / Edge / Firefox)
+1. Install **Violentmonkey** or **Tampermonkey** from your browser's extension store.
+2. Open the install link and confirm:  
+   👉 **[Install Search-Only YouTube](https://raw.githubusercontent.com/jakedarrow/SmartScreenTime/main/smart-screentime.user.js)**  
+*(Alternatively, Chrome users can load the unpacked `SmartScreenTime-Extension` folder via `chrome://extensions`).*
 
 ---
 
