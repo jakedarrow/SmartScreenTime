@@ -4,6 +4,7 @@
 // @version      1.3.0
 // @description  Turns YouTube into a distraction-free search tool: eliminates feeds, shorts, comments, recommendations, and autoplay countdowns.
 // @author       Jake Darrow
+// @license      MIT
 // @match        *://*.youtube.com/*
 // @run-at       document-start
 // @grant        none
