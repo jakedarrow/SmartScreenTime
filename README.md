@@ -4,6 +4,10 @@ A lightweight browser script that turns YouTube into a distraction-free search t
 
 Works in Mobile Safari (iPhone/iPad) and desktop browsers.
 
+<p align="center">
+  <img src="docs/comparison.jpg" alt="Before and After: Search-Only YouTube" width="800" style="border-radius: 12px; max-width: 100%;">
+</p>
+
 ---
 
 ### What it does
