@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         SmartScreenTime - Hardcore YouTube Shield
 // @namespace    https://github.com/jakedarrow/SmartScreenTime
-// @version      1.2.0
-// @description  Hardcore distraction-free YouTube: eliminates feeds, shorts, comments, recommendations, and end-screen/up-next overlays on Desktop & Mobile Safari.
+// @version      1.3.0
+// @description  Hardcore distraction-free YouTube: eliminates feeds, shorts, comments, recommendations, and mobile/desktop "Up Next" countdown overlays.
 // @author       Jake Darrow
 // @match        *://*.youtube.com/*
 // @run-at       document-start
@@ -16,7 +16,21 @@
 
   // 1. Inject Hardcore Distraction-Free CSS (Desktop & Mobile)
   const css = `
-    /* Hard Block All End-Screen Suggested Videos, Up Next Cards & Overlays */
+    /* ==========================================================================
+       1. Hard Block End-Screen Overlays, Up Next Countdown Cards & Autonav
+       ========================================================================== */
+    /* Mobile Custom Tags (No leading dot - custom HTML elements) */
+    ytm-autonav-endscreen-renderer,
+    ytm-autonav-bar,
+    ytm-endscreen-renderer,
+    ytm-endscreen-item-renderer,
+    ytm-endscreen-element,
+    ytm-autonav-endscreen-button-renderer,
+    ytm-autonav-preview-renderer,
+    ytm-autonav-countdown-renderer,
+    ytm-upnext-renderer,
+
+    /* Desktop & Mobile Player Classes */
     .ytp-upnext,
     .ytp-upnext-container,
     .ytp-player-content.ytp-upnext,
@@ -46,19 +60,14 @@
     .ytp-ce-covering-overlay,
     .ytp-ce-covering-image,
     .ytp-ce-shadow,
-    .ytm-endscreen-renderer,
-    .ytm-endscreen-item-renderer,
-    .ytm-endscreen-element,
-    .ytm-autonav-bar,
-    .ytm-autonav-endscreen,
-    .ytm-autonav-endscreen-button-renderer,
     .endscreen-video-item,
     [class*="videowall" i],
     [class*="ytp-endscreen" i],
     [class*="ytp-upnext" i],
     [class*="autonav-endscreen" i],
     [class*="ytm-endscreen" i],
-    [class*="ytp-autonav" i] {
+    [class*="ytp-autonav" i],
+    [class*="autonav" i] {
       display: none !important;
       opacity: 0 !important;
       visibility: hidden !important;
@@ -69,7 +78,9 @@
       max-width: 0 !important;
     }
 
-    /* Desktop Clutter, Feeds, Ads & Comments */
+    /* ==========================================================================
+       2. Desktop YouTube Clutter, Feeds, Ads & Comments
+       ========================================================================== */
     #guide,
     ytd-mini-guide-renderer,
     #guide-button,
@@ -94,7 +105,9 @@
       display: none !important;
     }
 
-    /* Mobile YouTube Clutter, Feeds & Recommendations */
+    /* ==========================================================================
+       3. Mobile YouTube Clutter, Feeds & Recommendations
+       ========================================================================== */
     ytm-feed-filter-chip-bar-renderer,
     ytm-chip-cloud-renderer,
     ytm-chip-cloud-chip-renderer,
@@ -121,7 +134,9 @@
       display: none !important;
     }
 
-    /* Mobile Comments & Engagement Panels */
+    /* ==========================================================================
+       4. Mobile Comments & Engagement Panels
+       ========================================================================== */
     ytm-comments-entry-point-header-renderer,
     ytm-comments-header-renderer,
     ytm-comment-section-renderer,
@@ -152,7 +167,9 @@
       padding: 0 !important;
     }
 
-    /* Hard Block All Shorts */
+    /* ==========================================================================
+       5. Hard Block All Shorts
+       ========================================================================== */
     ytd-reel-shelf-renderer,
     ytd-reel-item-renderer,
     ytd-rich-shelf-renderer[is-shorts],
@@ -208,7 +225,7 @@
 
     if (path.includes('/watch')) {
       disableAutoplay();
-      purgeWatch();
+      killUpNextAndEndScreen();
     }
   }
 
@@ -229,17 +246,55 @@
     ).forEach(s => s.remove());
   }
 
-  function purgeWatch() {
+  // Active exterminator for "Up next in X" cards, end-screen video tiles & autoplay prompts
+  function killUpNextAndEndScreen() {
     const player = document.querySelector('.html5-video-player');
     if (player) {
       player.classList.remove('ytp-show-tiles', 'ytp-upnext-active');
     }
 
-    // Eliminate all end-screen and up-next elements immediately
-    document.querySelectorAll(
-      '.ytp-upnext, .ytp-upnext-container, .ytp-player-content.ytp-upnext, .ytp-autonav-endscreen-countdown-container, .ytp-autonav-endscreen-countdown-overlay, .ytp-autonav-endscreen-upnext-container, .ytp-autonav-endscreen-upnext-header, .ytp-autonav-endscreen-upnext-button, .ytp-autonav-endscreen-button-container, .ytp-autonav-endscreen-link-container, .ytp-cairo-refresh-autonav-overlay, .ytp-videowall-still, .ytp-endscreen-content, .ytp-endscreen-paginate, .ytp-suggestion-set, .html5-endscreen, .ytp-ce-element, .ytm-endscreen-renderer, .ytm-endscreen-item-renderer, .ytm-endscreen-element, .ytm-autonav-bar, .ytm-autonav-endscreen, .ytm-autonav-endscreen-button-renderer, .endscreen-video-item, [class*="videowall" i], [class*="ytp-endscreen" i], [class*="ytp-upnext" i], [class*="autonav-endscreen" i], [class*="ytm-endscreen" i], [class*="ytp-autonav" i], ytm-comments-entry-point-header-renderer, .ytm-comments-section, #comments, ytd-comments, ytm-engagement-panel-section-list-renderer'
-    ).forEach(el => el.remove());
+    // 1. Auto-click the "Cancel" button if YouTube pops the Autoplay countdown
+    document.querySelectorAll('button, [role="button"]').forEach(btn => {
+      const text = (btn.innerText || btn.textContent || '').trim();
+      if (text === 'Cancel') {
+        btn.click();
+        const card = btn.closest('ytm-autonav-endscreen-renderer, [class*="autonav" i], div');
+        if (card && card !== document.body && card !== document.documentElement) {
+          card.remove();
+        }
+      }
+    });
 
+    // 2. Remove all custom tags and autonav/endscreen elements
+    document.querySelectorAll(
+      'ytm-autonav-endscreen-renderer, ytm-autonav-bar, ytm-endscreen-renderer, ytm-endscreen-item-renderer, ytm-endscreen-element, ytm-autonav-endscreen-button-renderer, .ytp-upnext, .ytp-upnext-container, .ytp-autonav-endscreen-countdown-container, .ytp-cairo-refresh-autonav-overlay, .ytp-videowall-still, .ytp-endscreen-content, .html5-endscreen, .ytp-ce-element, [class*="videowall" i], [class*="ytp-endscreen" i], [class*="ytp-upnext" i], [class*="autonav-endscreen" i], [class*="ytm-endscreen" i], [class*="ytp-autonav" i], [class*="autonav" i], ytm-comments-entry-point-header-renderer, .ytm-comments-section, #comments, ytd-comments, ytm-engagement-panel-section-list-renderer'
+    ).forEach(el => {
+      if (el !== document.body && el !== document.documentElement) {
+        el.remove();
+      }
+    });
+
+    // 3. Scan text nodes specifically for "Up next in" to nuke any obfuscated wrapper card
+    const walker = document.createTreeWalker(document.body || document.documentElement, NodeFilter.SHOW_TEXT);
+    let node;
+    while ((node = walker.nextNode())) {
+      if (node.nodeValue && /Up next in/i.test(node.nodeValue)) {
+        let parent = node.parentElement;
+        while (parent && parent !== document.body && parent.parentElement !== document.body) {
+          if (
+            parent.tagName.toLowerCase().startsWith('ytm-') ||
+            /autonav|endscreen|overlay/i.test(parent.className || '') ||
+            parent.offsetHeight > 80
+          ) {
+            parent.remove();
+            break;
+          }
+          parent = parent.parentElement;
+        }
+      }
+    }
+
+    // 4. Remove comment containers
     document.querySelectorAll('ytm-item-section-renderer, div').forEach(el => {
       if (/^Comments\s*\d+/i.test((el.innerText || '').trim())) el.remove();
     });
@@ -266,17 +321,24 @@
     }, 200);
   }
 
-  // End-of-video overlay interceptors: runs continuously during playback to preemptively wipe end cards
+  // Periodic heartbeat on watch pages to ensure dynamic end-screens never linger
+  setInterval(() => {
+    if (window.location.pathname.includes('/watch')) {
+      killUpNextAndEndScreen();
+    }
+  }, 300);
+
+  // End-of-video overlay interceptors
   document.addEventListener('timeupdate', (e) => {
     if (e.target && e.target.tagName === 'VIDEO') {
       const video = e.target;
       if (video.duration && (video.duration - video.currentTime < 20 || video.ended)) {
-        purgeWatch();
+        killUpNextAndEndScreen();
       }
     }
   }, true);
 
-  document.addEventListener('ended', purgeWatch, true);
+  document.addEventListener('ended', killUpNextAndEndScreen, true);
 
   // SPA navigation hooks
   window.addEventListener('yt-navigate-finish', handleNavigation);
@@ -288,7 +350,7 @@
     const path = window.location.pathname;
     if (path === '/' || path === '') purgeHome();
     else if (path.includes('/results')) purgeShorts();
-    else if (path.includes('/watch')) purgeWatch();
+    else if (path.includes('/watch')) killUpNextAndEndScreen();
   }).observe(document.documentElement, { childList: true, subtree: true });
 
   if (document.readyState === 'loading') {
