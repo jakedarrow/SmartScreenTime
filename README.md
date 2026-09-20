@@ -31,5 +31,13 @@ Works in Mobile Safari (iPhone/iPad) and desktop browsers.
 
 ---
 
+### Support
+
+If Search-Only YouTube saved you time or helped you reclaim your focus, feel free to support the project:
+
+[![Support on Ko-fi](https://img.shields.io/badge/Ko--fi-Support%20the%20Project-29abe0?style=flat&logo=kofi&logoColor=white)](https://ko-fi.com/jakedarrow)
+
+---
+
 ### License
 MIT
