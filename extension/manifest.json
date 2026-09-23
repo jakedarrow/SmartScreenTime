@@ -1,10 +1,20 @@
 {
   "manifest_version": 3,
-  "name": "Search-Only YouTube",
-  "version": "1.3.0",
-  "description": "Turns YouTube into a distraction-free search tool: eliminates feeds, shorts, comments, recommendations, and autoplay countdowns.",
+  "name": "Search-Only YouTube & Screen Time",
+  "version": "1.3.1",
+  "description": "Turns YouTube into a distraction-free search tool with active screen time monitoring.",
+  "permissions": [
+    "storage",
+    "alarms"
+  ],
+  "host_permissions": [
+    "*://*.youtube.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
   "action": {
-    "default_title": "Search-Only YouTube"
+    "default_title": "Search-Only YouTube & Screen Time"
   },
   "content_scripts": [
     {

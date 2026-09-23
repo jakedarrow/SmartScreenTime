@@ -1,4 +1,4 @@
-// Search-Only YouTube: Distraction-Free YouTube Engine (Desktop & Mobile)
+// Search-Only YouTube: Distraction-Free YouTube Engine & Screen Time Limiter
 (function () {
   'use strict';
 
@@ -28,11 +28,12 @@
 
     if (path.includes('/watch')) {
       disableAutoplay();
-      killUpNextAndEndScreen();
+      purgeEndScreenOverlays();
     }
   }
 
   function purgeHome() {
+    if (window.location.pathname !== '/' && window.location.pathname !== '') return;
     document.querySelectorAll(
       'ytm-feed-filter-chip-bar-renderer, ytm-chip-cloud-renderer, ytm-single-column-browse-results-renderer, ytm-section-list-renderer, [tab-identifier="FEwhat_to_watch"], ytm-pivot-bar-renderer, ytd-browse[page-subtype="home"] #contents'
     ).forEach(el => el.remove());
@@ -49,57 +50,25 @@
     ).forEach(s => s.remove());
   }
 
-  // Active exterminator for "Up next in X" cards, end-screen video tiles & autoplay prompts
-  function killUpNextAndEndScreen() {
+  function purgeEndScreenOverlays() {
     const player = document.querySelector('.html5-video-player');
     if (player) {
       player.classList.remove('ytp-show-tiles', 'ytp-upnext-active');
     }
 
-    // 1. Auto-click the "Cancel" button if YouTube pops the Autoplay countdown
-    document.querySelectorAll('button, [role="button"]').forEach(btn => {
-      const text = (btn.innerText || btn.textContent || '').trim();
-      if (text === 'Cancel') {
-        btn.click();
-        const card = btn.closest('ytm-autonav-endscreen-renderer, [class*="autonav" i], div');
-        if (card && card !== document.body && card !== document.documentElement) {
-          card.remove();
-        }
-      }
-    });
-
-    // 2. Remove all custom tags and autonav/endscreen elements
-    document.querySelectorAll(
-      'ytm-autonav-endscreen-renderer, ytm-autonav-bar, ytm-endscreen-renderer, ytm-endscreen-item-renderer, ytm-endscreen-element, ytm-autonav-endscreen-button-renderer, .ytp-upnext, .ytp-upnext-container, .ytp-autonav-endscreen-countdown-container, .ytp-cairo-refresh-autonav-overlay, .ytp-videowall-still, .ytp-endscreen-content, .html5-endscreen, .ytp-ce-element, [class*="videowall" i], [class*="ytp-endscreen" i], [class*="ytp-upnext" i], [class*="autonav-endscreen" i], [class*="ytm-endscreen" i], [class*="ytp-autonav" i], [class*="autonav" i], ytm-comments-entry-point-header-renderer, .ytm-comments-section, #comments, ytd-comments, ytm-engagement-panel-section-list-renderer'
-    ).forEach(el => {
-      if (el !== document.body && el !== document.documentElement) {
-        el.remove();
-      }
-    });
-
-    // 3. Scan text nodes specifically for "Up next in" to nuke any obfuscated wrapper card
-    const walker = document.createTreeWalker(document.body || document.documentElement, NodeFilter.SHOW_TEXT);
-    let node;
-    while ((node = walker.nextNode())) {
-      if (node.nodeValue && /Up next in/i.test(node.nodeValue)) {
-        let parent = node.parentElement;
-        while (parent && parent !== document.body && parent.parentElement !== document.body) {
-          if (
-            parent.tagName.toLowerCase().startsWith('ytm-') ||
-            /autonav|endscreen|overlay/i.test(parent.className || '') ||
-            parent.offsetHeight > 80
-          ) {
-            parent.remove();
-            break;
-          }
-          parent = parent.parentElement;
-        }
-      }
+    // Auto-cancel autoplay countdown on mobile if present
+    const mobileCancelBtn = document.querySelector('ytm-autonav-endscreen-renderer button, ytm-autonav-countdown-renderer button');
+    if (mobileCancelBtn) {
+      mobileCancelBtn.click();
     }
 
-    // 4. Remove comment containers
-    document.querySelectorAll('ytm-item-section-renderer, div').forEach(el => {
-      if (/^Comments\s*\d+/i.test((el.innerText || '').trim())) el.remove();
+    // Safely remove overlay elements without touching the video player
+    document.querySelectorAll(
+      '.ytp-videowall-still, .ytp-endscreen-content, .ytp-ce-element, .html5-endscreen, .ytm-endscreen-renderer, [class*="videowall" i], .ytp-suggestion-set, ytm-autonav-endscreen-renderer, ytm-autonav-bar, ytm-autonav-countdown-renderer, .ytp-autonav-endscreen-countdown-container, .ytp-cairo-refresh-autonav-overlay'
+    ).forEach(el => {
+      if (el && el !== player && !el.contains(player)) {
+        el.remove();
+      }
     });
   }
 
@@ -124,24 +93,37 @@
     }, 200);
   }
 
-  // Periodic heartbeat on watch pages to ensure dynamic end-screens never linger
-  setInterval(() => {
-    if (window.location.pathname.includes('/watch')) {
-      killUpNextAndEndScreen();
-    }
-  }, 300);
+  // Screen Time Limiter Heartbeat & Telemetry (every 5s during active playback)
+  function setupPlaybackTelemetry() {
+    setInterval(() => {
+      if (!window.location.pathname.includes('/watch')) return;
+      const video = document.querySelector('video');
+      if (video && !video.paused && !video.ended && document.visibilityState === 'visible') {
+        try {
+          chrome.runtime?.sendMessage?.({
+            type: 'PLAYBACK_HEARTBEAT',
+            url: window.location.href,
+            title: document.title,
+            seconds: 5
+          });
+        } catch (e) {
+          // Extension context invalidated or userscript mode - ignore
+        }
+      }
+    }, 5000);
+  }
 
   // End-of-video overlay interceptors
   document.addEventListener('timeupdate', (e) => {
     if (e.target && e.target.tagName === 'VIDEO') {
       const video = e.target;
-      if (video.duration && (video.duration - video.currentTime < 20 || video.ended)) {
-        killUpNextAndEndScreen();
+      if (video.duration && (video.duration - video.currentTime < 15 || video.ended)) {
+        purgeEndScreenOverlays();
       }
     }
   }, true);
 
-  document.addEventListener('ended', killUpNextAndEndScreen, true);
+  document.addEventListener('ended', purgeEndScreenOverlays, true);
 
   // SPA navigation hooks
   window.addEventListener('yt-navigate-finish', handleNavigation);
@@ -153,8 +135,10 @@
     const path = window.location.pathname;
     if (path === '/' || path === '') purgeHome();
     else if (path.includes('/results')) purgeShorts();
-    else if (path.includes('/watch')) killUpNextAndEndScreen();
+    else if (path.includes('/watch')) purgeEndScreenOverlays();
   }).observe(document.documentElement, { childList: true, subtree: true });
+
+  setupPlaybackTelemetry();
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', handleNavigation);
